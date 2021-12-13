@@ -28,9 +28,10 @@ public class ClienteController {
     @POST
     public Response insert(Cliente cliente){
         clienteService.insert(cliente);
+        ;
         return Response.ok()
                 .status(Response.Status.OK)
-                .entity(clienteService.findAll())
+                .entity(cliente)
                 .build();
     }
 

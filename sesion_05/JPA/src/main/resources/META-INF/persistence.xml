@@ -8,11 +8,14 @@
 
         <class>com.cursojavaee.jpa.model.Cliente</class>
         <class>com.cursojavaee.jpa.model.Pasaporte</class>
+        <class>com.cursojavaee.jpa.model.Factura</class>
+        <class>com.cursojavaee.jpa.model.Curso</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.generate_statistics" value="true"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
           <!--  <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

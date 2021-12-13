@@ -7,22 +7,24 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
-public class Pasaporte implements Serializable {
+@NoArgsConstructor
+public class Factura implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
     private Integer id;
 
-    @Column(name = "numero")
     @Getter
     @Setter
-    private String numero;
+    private Double importe;
 
-    @OneToOne(mappedBy = "pasaporte", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 }
